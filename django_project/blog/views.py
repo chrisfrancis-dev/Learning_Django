@@ -6,15 +6,15 @@ from django.shortcuts import render
 post = [
     {
         'author':'Chris Francis',
-        'topic':'HTML Basics',
-        'description':'This is the Basics',
-        'date':'July-20'
+        'title':'HTML Basics',
+        'content':'This is the Basics',
+        'date_posted':'July-20'
     },
     {
         'author':'Chris Francis',
-        'topic':'HTML Basics',
-        'description':'This is the Basics',
-        'date':'July-20'
+        'title':'HTML Basics',
+        'content':'This is the Basics',
+        'date_posted':'July-20'
     }
 ] 
 
@@ -23,7 +23,7 @@ def home(request):
         'posts':post
     }
     # return HttpResponse('<h1>HOME PAGE<h1>') commented since we don't need it 
-    # request, then the template where the html page is located and then context which is data which will be manipulated on the html page
+    # request, then the template where the html page is located and then context which is data which will be manipulated on the html page it has to be a dictionary
     return render(request,'blog/home.html',context) 
 
 def about(request):
