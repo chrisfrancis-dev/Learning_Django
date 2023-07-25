@@ -1,5 +1,6 @@
 <!-- Even in the users app you can extend a template from the blog app -->
 {%extends "blog/base.html"%} 
+{%load crispy_forms_tags%}
 {%block content%}
     <div class="content-section">
         <!-- method="POST" is compulsory or else it won't work -->
@@ -10,7 +11,8 @@
                 <legend class="border-bottom mb-4"></legend>
                 <!-- The form that has all the validation -->
                 <!-- .as_p will render our form as paragraph tags and it will look nicer -->
-                {{form.as_p}} 
+                <!-- {{form.as_p}} commenting this out since we will be using crispy forms to format our code -->
+                {{ form | crispy}}
             </fieldset>
             <!-- Sign Up button as the button is not included in the form -->
             <div class="form-group">
