@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include # include is added
+from users import views as user_views  # we import views.py from users as user_views
 
 urlpatterns = [
+    path('register/', user_views.register, name = 'register'), # user_views sends this to the register view which is a function in views.py
     path('admin/', admin.site.urls),
     path('', include('blog.urls')), # an empty string means the home directory, when the site loads this is the first page that shows, and it goes to blog.urls 
 ]
